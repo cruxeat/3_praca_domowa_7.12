@@ -27,7 +27,7 @@ public class Controller {
     }
 
     public void ToDane(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("okienko_dane"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("okienko_dane.fxml"));
         try {
             Parent pane = loader.load();
             Contr_Dane controller = loader.getController();
@@ -41,7 +41,7 @@ public class Controller {
     }
 
     public void ToStatystyki(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("okienko_statystyka"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("okienko_statystyka.fxml"));
         try {
             Parent pane = loader.load();
             Contr_Stat controller = loader.getController();
