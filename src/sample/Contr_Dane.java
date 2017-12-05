@@ -40,7 +40,7 @@ public class Contr_Dane implements HierarchicalController<Controller>{
 
         table = new TableView<>();
         table.setItems(parentController.getDataContainer().getCzlowieczeks());
-
+        System.out.println("Test");
         for (TableColumn<Czlowieczek, ?> column : table.getColumns()) {
             if ("kol_imie".equals(column.getId())) {
                 TableColumn<Czlowieczek, String> textColumn = (TableColumn<Czlowieczek, String>) column;
