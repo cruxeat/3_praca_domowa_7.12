@@ -5,9 +5,14 @@ import javafx.collections.ObservableList;
 
 public class DataContainer {
 
-    private ObservableList<Czlowieczek> czlowieczeks;
+    private ObservableList<Czlowieczek> czlowieczeks ;
+    ObservableList<Czlowieczek> czlowieczek1, czlowieczek2, czlowieczek3;
 
     public ObservableList<Czlowieczek> getCzlowieczeks() {
+        czlowieczeks.add(new Czlowieczek ("Agnieszka", "Kulesza", "1", "2", "3"));
+        czlowieczeks.add(new Czlowieczek ("Nika", "Sidorowidz", "1", "2", "3"));
+        czlowieczeks.add(new Czlowieczek ("Kasia", "Rode", "1", "2", "3"));
+
         return czlowieczeks;
     }
 
@@ -19,4 +24,6 @@ public class DataContainer {
     public DataContainer (){
         czlowieczeks = FXCollections.observableArrayList();
     }
+
+
 }

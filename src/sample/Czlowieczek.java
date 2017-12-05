@@ -55,5 +55,9 @@ public class Czlowieczek {
     public void setWzrost(String wzrost) {
         this.wzrost = wzrost;
     }
+
+
+
+
 }
 

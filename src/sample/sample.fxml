@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -10,11 +11,13 @@
       <Pane fx:id="srodek" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>
    <top>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="50.0" prefWidth="250.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="logowanie" mnemonicParsing="false" onAction="#ToLogowanie" text="Logowanie" />
             <Button fx:id="dane" mnemonicParsing="false" onAction="#ToDane" text="Dane" />
             <Button fx:id="statystyki" mnemonicParsing="false" onAction="#ToStatystyki" text="Statystyki" />
+            <TextField fx:id="login" promptText="Login" />
+            <TextField fx:id="rola" promptText="Rola" />
          </children>
       </HBox>
    </top>

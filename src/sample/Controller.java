@@ -3,54 +3,67 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
+import java.awt.*;
 import java.io.IOException;
 
-public class Controller {
+public class Controller implements HierarchicalController<Controller>  {
+
 
     public Pane srodek;
+    public TextField login;
+    public TextField rola;
+    protected DataContainer dataContainer;
+
+    public DataContainer getDataContainer() {
+        return dataContainer;
+    }
+
+    public Controller() {
+        dataContainer =  new DataContainer();
+    }
+
+    private void loadIntoPane(String fxml) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+        try {
+            final Pane load = loader.load();
+            srodek.getChildren().clear();
+            srodek.getChildren().add(load);
+            HierarchicalController<Controller> daneController = loader.getController();
+            daneController.setParentController(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public void ToLogowanie(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("okienko_logowanie.fxml"));
-        try{
-            Parent pane = loader.load();
-            Contr_Log controller = loader.getController();
-            controller.setParentController(this);
-            srodek.getChildren().clear();
-            srodek.getChildren().add(pane);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadIntoPane("okienko_logowanie.fxml");
     }
 
     public void ToDane(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("okienko_dane.fxml"));
-        try {
-            Parent pane = loader.load();
-            Contr_Dane controller = loader.getController();
-            controller.setParentController(this);
-            srodek.getChildren().clear();
-            srodek.getChildren().add(pane);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        loadIntoPane("okienko_dane.fxml");
     }
 
     public void ToStatystyki(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("okienko_statystyka.fxml"));
-        try {
-            Parent pane = loader.load();
-            Contr_Stat controller = loader.getController();
-            controller.setParentController(this);
-            srodek.getChildren().clear();
-            srodek.getChildren().add(pane);
+        loadIntoPane("okienko_statystyka.fxml");
+    }
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void ToWylog(ActionEvent actionEvent) {
+        loadIntoPane("okienko_wylogowanie.fxml");
+    }
+
+
+
+    @Override
+    public Controller getParentController() {
+        return this;
+    }
+
+    @Override
+    public void setParentController(Controller parent) {
+
     }
 }
