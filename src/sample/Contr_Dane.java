@@ -1,17 +1,13 @@
 package sample;
 
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.GridPane;
 
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Contr_Dane implements HierarchicalController<Controller>{
     private Controller parentController;
@@ -27,12 +23,26 @@ public class Contr_Dane implements HierarchicalController<Controller>{
     }
 
     public void wyliczStat(ActionEvent actionEvent) {
-        Integer sr_wzrost;
-        Integer sr_wiek;
-        Integer liczba;
 
+        ObservableList<Czlowieczek> czlowieczki = parentController.getDataContainer().getCzlowieczeks();
 
+        int liczba = czlowieczki.size();
+        int suma_wzrost = 0;
+        int suma_wiek = 0;
+        for (Czlowieczek c : czlowieczki) {
+            suma_wiek += Integer.parseInt(c.getWiek());
+            suma_wzrost += Integer.parseInt(c.getWzrost());
+        }
 
+        int sr_wzrost = suma_wzrost / liczba;
+        int sr_wiek = suma_wiek / liczba;
+
+        List<Integer> lista = new ArrayList<Integer>();
+        lista.add(sr_wiek);
+        lista.add(sr_wzrost);
+        lista.add(liczba);
+
+        parentController.lista_statystyk = lista;
         parentController.ToStatystyki(actionEvent);
     }
 
