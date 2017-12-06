@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,8 @@ import java.util.List;
 public class Contr_Dane implements HierarchicalController<Controller>{
     private Controller parentController;
     public TableView<Czlowieczek> table;
+    private Pane dlaAdmina;
+
 
     public Controller getParentController() {
         return parentController;
@@ -69,6 +72,8 @@ public class Contr_Dane implements HierarchicalController<Controller>{
                 column.setCellValueFactory(new PropertyValueFactory<>("wzrost"));
             }
         }
+
+        //TODO: if user jest admin to załaduj tutaj(pane dlaAdmina) zmiany (okienko_dane_admina) do tabelki
     }
 
 
