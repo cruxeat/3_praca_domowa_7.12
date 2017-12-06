@@ -2,12 +2,11 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
-import java.awt.*;
 import java.io.IOException;
+import java.util.List;
 
 public class Controller implements HierarchicalController<Controller>  {
 
@@ -16,6 +15,18 @@ public class Controller implements HierarchicalController<Controller>  {
     public TextField login;
     public TextField rola;
     protected DataContainer dataContainer;
+    public List<Integer> lista_statystyk;
+
+
+    public String getSredniWiek(){
+        return Integer.toString(lista_statystyk.get(0));
+    }
+    public String getSredniWzrost(){
+        return Integer.toString(lista_statystyk.get(1));
+    }
+    public String getLiczba(){
+        return Integer.toString(lista_statystyk.get(2));
+    }
 
     public DataContainer getDataContainer() {
         return dataContainer;
