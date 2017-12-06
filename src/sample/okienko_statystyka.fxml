@@ -4,13 +4,13 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Contr_Stat">
    <children>
-      <TableView prefHeight="200.0" prefWidth="200.0">
+      <TableView prefHeight="200.0" prefWidth="300.0">
         <columns>
-          <TableColumn prefWidth="100.0" text="C1" />
-          <TableColumn prefWidth="100.0" text="C2" />
+          <TableColumn fx:id="sr_wiek" prefWidth="100.0" text="średni wiek" />
+          <TableColumn fx:id="sr_wzrost" prefWidth="100.0" text="średni wzrost" />
+            <TableColumn fx:id="liczba" prefWidth="100.0" text="liczba" />
         </columns>
       </TableView>
    </children>

@@ -15,14 +15,7 @@ import java.io.IOException;
 
 public class Contr_Dane implements HierarchicalController<Controller>{
     private Controller parentController;
-    public TextField imieInput;
-    public TextField nazwiskoInput;
-    public TextField peselInput;
-    public TextField wiekInput;
-    public TextField wzrostInput;
     public TableView<Czlowieczek> table;
-
-
 
     public Controller getParentController() {
         return parentController;
@@ -30,42 +23,45 @@ public class Contr_Dane implements HierarchicalController<Controller>{
 
     public void setParentController(Controller parentController) {
         this.parentController = parentController;
+        table.getItems().addAll(parentController.getDataContainer().getCzlowieczeks());
     }
 
     public void wyliczStat(ActionEvent actionEvent) {
+        Integer sr_wzrost;
+        Integer sr_wiek;
+        Integer liczba;
+
+
+
         parentController.ToStatystyki(actionEvent);
     }
 
     public void initialize() {
 
-        table = new TableView<>();
-        table.setItems(parentController.getDataContainer().getCzlowieczeks());
-        System.out.println("Test");
         for (TableColumn<Czlowieczek, ?> column : table.getColumns()) {
             if ("kol_imie".equals(column.getId())) {
-                TableColumn<Czlowieczek, String> textColumn = (TableColumn<Czlowieczek, String>) column;
-                textColumn.setCellValueFactory(new PropertyValueFactory<>("imie"));
+                //TableColumn<Czlowieczek, String> textColumn = (TableColumn<Czlowieczek, String>) column;
+                column.setCellValueFactory(new PropertyValueFactory<>("imie"));
             } else if ("kol_nazwisko".equals(column.getId())) {
-                TableColumn<Czlowieczek, String> textColumn = (TableColumn<Czlowieczek, String>) column;
-                textColumn.setCellValueFactory(new PropertyValueFactory<>("nazwisko"));
+                //TableColumn<Czlowieczek, String> textColumn = (TableColumn<Czlowieczek, String>) column;
+                column.setCellValueFactory(new PropertyValueFactory<>("nazwisko"));
             }
             else if ("kol_pesel".equals(column.getId())) {
-                TableColumn<Czlowieczek, String> textColumn = (TableColumn<Czlowieczek, String>) column;
-                textColumn.setCellValueFactory(new PropertyValueFactory<>("pesel"));
+                //TableColumn<Czlowieczek, String> textColumn = (TableColumn<Czlowieczek, String>) column;
+                column.setCellValueFactory(new PropertyValueFactory<>("pesel"));
             }
             else if ("kol_wiek".equals(column.getId())) {
-                TableColumn<Czlowieczek, String> textColumn = (TableColumn<Czlowieczek, String>) column;
-                textColumn.setCellValueFactory(new PropertyValueFactory<>("wiek"));
+                //TableColumn<Czlowieczek, String> textColumn = (TableColumn<Czlowieczek, String>) column;
+                column.setCellValueFactory(new PropertyValueFactory<>("wiek"));
             }
             else if ("kol_wzrost".equals(column.getId())) {
-                TableColumn<Czlowieczek, String> textColumn = (TableColumn<Czlowieczek, String>) column;
-                textColumn.setCellValueFactory(new PropertyValueFactory<>("wzrost"));
+                //TableColumn<Czlowieczek, String> textColumn = (TableColumn<Czlowieczek, String>) column;
+                column.setCellValueFactory(new PropertyValueFactory<>("wzrost"));
             }
         }
     }
 
 
-    public void synchronizuj(ActionEvent actionEvent) {
-        parentController.getDataContainer().setCzlowieczeks(table.getItems());
-    }
+    ///public void synchronizuj(ActionEvent actionEvent) {
+       /// parentController.getDataContainer().setCzlowieczeks(table.getItems());}
 }

@@ -3,6 +3,8 @@ package sample;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.List;
+
 public class DataContainer {
 
     private ObservableList<Czlowieczek> czlowieczeks ;
@@ -16,7 +18,7 @@ public class DataContainer {
         return czlowieczeks;
     }
 
-    public void setCzlowieczeks(ObservableList<Czlowieczek> czlowieczeks) {
+    public void setCzlowieczeks(List<Czlowieczek> czlowieczeks) {
         this.czlowieczeks = FXCollections.observableArrayList(czlowieczeks);
 
     }
