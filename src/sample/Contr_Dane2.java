@@ -10,7 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Contr_Dane2 implements HierarchicalController<Controller>{
+public class Contr_Dane2 implements HierarchicalController<Controller> {
     private Controller parentController;
     public TableView<Czlowieczek> table;
     public TextField imieInput;
@@ -61,16 +61,13 @@ public class Contr_Dane2 implements HierarchicalController<Controller>{
             } else if ("kol_nazwisko".equals(column.getId())) {
                 //TableColumn<Czlowieczek, String> textColumn = (TableColumn<Czlowieczek, String>) column;
                 column.setCellValueFactory(new PropertyValueFactory<>("nazwisko"));
-            }
-            else if ("kol_pesel".equals(column.getId())) {
+            } else if ("kol_pesel".equals(column.getId())) {
                 //TableColumn<Czlowieczek, String> textColumn = (TableColumn<Czlowieczek, String>) column;
                 column.setCellValueFactory(new PropertyValueFactory<>("pesel"));
-            }
-            else if ("kol_wiek".equals(column.getId())) {
+            } else if ("kol_wiek".equals(column.getId())) {
                 //TableColumn<Czlowieczek, String> textColumn = (TableColumn<Czlowieczek, String>) column;
                 column.setCellValueFactory(new PropertyValueFactory<>("wiek"));
-            }
-            else if ("kol_wzrost".equals(column.getId())) {
+            } else if ("kol_wzrost".equals(column.getId())) {
                 //TableColumn<Czlowieczek, String> textColumn = (TableColumn<Czlowieczek, String>) column;
                 column.setCellValueFactory(new PropertyValueFactory<>("wzrost"));
             }
@@ -78,14 +75,17 @@ public class Contr_Dane2 implements HierarchicalController<Controller>{
     }
 
     public void clickAdd(ActionEvent actionEvent) {
-        Czlowieczek czlowieczek =  new Czlowieczek();
+        Czlowieczek czlowieczek = new Czlowieczek();
         czlowieczek.setImie(imieInput.getText());
         czlowieczek.setNazwisko(nazwiskoInput.getText());
         czlowieczek.setPesel(peselInput.getText());
         czlowieczek.setWiek(wiekInput.getText());
         czlowieczek.setWzrost(wzrostInput.getText());
 
+
         table.getItems().add(czlowieczek);
+        parentController.getDataContainer().setCzlowieczeks(table.getItems());
+
         imieInput.clear();
         nazwiskoInput.clear();
         peselInput.clear();
@@ -94,14 +94,12 @@ public class Contr_Dane2 implements HierarchicalController<Controller>{
 
     }
 
+
     public void clickDelete(ActionEvent actionEvent) {
         ObservableList<Czlowieczek> czlowieczekWybrany, wszystkieCzlowieczki;
         wszystkieCzlowieczki = table.getItems();
         czlowieczekWybrany = table.getSelectionModel().getSelectedItems();
         czlowieczekWybrany.forEach(wszystkieCzlowieczki::remove);
     }
-
-
-    ///public void synchronizuj(ActionEvent actionEvent) {
-       /// parentController.getDataContainer().setCzlowieczeks(table.getItems());}
 }
+
