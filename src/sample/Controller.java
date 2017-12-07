@@ -55,7 +55,12 @@ public class Controller implements HierarchicalController<Controller>  {
     }
 
     public void ToDane(ActionEvent actionEvent) {
-        loadIntoPane("okienko_dane.fxml");
+        if (login.getText().equals("Administrator")){
+            loadIntoPane("okienko_dane2.fxml");
+        }
+        else {
+            loadIntoPane("okienko_dane.fxml");
+        }
     }
 
     public void ToStatystyki(ActionEvent actionEvent) {

@@ -8,6 +8,14 @@ public class Czlowieczek {
     protected String wiek;
     protected String wzrost;
 
+    public Czlowieczek() {
+        this.imie = "";
+        this.nazwisko = "";
+        this.pesel = "";
+        this.wiek = "";
+        this.wzrost = "";
+    }
+
     public Czlowieczek(String imie, String nazwisko, String pesel, String wiek, String wzrost) {
         this.imie = imie;
         this.nazwisko = nazwisko;

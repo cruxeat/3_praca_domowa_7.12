@@ -37,10 +37,11 @@ public class Contr_Log implements HierarchicalController<Controller>{
 
         }
 
-        else if (user.getText().equals("Administrator")&& password.getText().equals("baton")){
+        else if (user.getText().equals("Administrator")&& password.getText().equals("kitkat")) {
 
             parentController.login.setText(user.getText());
             parentController.ToWylog(actionEvent);
+
         }
 
         else {
