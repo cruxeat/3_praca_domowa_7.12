@@ -18,6 +18,7 @@ public class Controller implements HierarchicalController<Controller>  {
     public List<Integer> lista_statystyk;
 
 
+
     public String getSredniWiek(){
         return Integer.toString(lista_statystyk.get(0));
     }
@@ -51,11 +52,15 @@ public class Controller implements HierarchicalController<Controller>  {
 
 
     public void ToLogowanie(ActionEvent actionEvent) {
-        loadIntoPane("okienko_logowanie.fxml");
+        if (login.getText().isEmpty()) {
+            loadIntoPane("okienko_logowanie.fxml");
+        } else {
+            loadIntoPane("okienko_wylogowanie.fxml");
+        }
     }
 
     public void ToDane(ActionEvent actionEvent) {
-        if (login.getText().equals("Administrator")){
+        if (rola.getText().equals("Administrator")){
             loadIntoPane("okienko_dane2.fxml");
         }
         else {

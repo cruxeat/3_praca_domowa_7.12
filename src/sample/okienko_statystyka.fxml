@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
 <AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Contr_Stat">
    <children>
-      <TableView fx:id="table" prefHeight="200.0" prefWidth="300.0">
-        <columns>
-            <TableColumn fx:id="sr_wiek" prefWidth="100.0" text="średni wiek" />
-            <TableColumn fx:id="liczba" prefWidth="100.0" text="liczba" />
-            <TableColumn fx:id="sr_wzrost" prefWidth="100.0" text="średni wzrost" />
-
-        </columns>
-      </TableView>
+      <Pane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="17.0" layoutY="36.0" text="Liczba ludkow" />
+            <Label layoutX="17.0" layoutY="84.0" text="Sredni wiek" />
+            <Label layoutX="18.0" layoutY="135.0" text="Sredni wzrost" />
+            <TextField fx:id="liczba" layoutX="109.0" layoutY="32.0" prefHeight="25.0" prefWidth="74.0" promptText="Milion?" />
+            <TextField fx:id="wiek" layoutX="109.0" layoutY="80.0" prefHeight="25.0" prefWidth="74.0" promptText="mniej niz 0?" />
+            <TextField fx:id="wzrost" layoutX="109.0" layoutY="131.0" prefHeight="25.0" prefWidth="74.0" promptText="żyrafa?" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

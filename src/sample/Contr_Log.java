@@ -30,16 +30,18 @@ public class Contr_Log implements HierarchicalController<Controller>{
 
 
     public void zaloguj(ActionEvent actionEvent) {
-        if (user.getText().equals("Użytkownik")&& password.getText().equals("baton")) {
+        if (user.getText().equals("Baton")&& password.getText().equals("baton")) {
 
             parentController.login.setText(user.getText());
+            parentController.rola.setText("Użytkownik");
             parentController.ToWylog(actionEvent);
 
         }
 
-        else if (user.getText().equals("Administrator")&& password.getText().equals("kitkat")) {
+        else if (user.getText().equals("Admin")&& password.getText().equals("admin")) {
 
             parentController.login.setText(user.getText());
+            parentController.rola.setText("Administrator");
             parentController.ToWylog(actionEvent);
 
         }

@@ -6,12 +6,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Contr_Log">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Contr_Log">
    <children>
       <Pane fx:id="srodekLog" prefHeight="200.0" prefWidth="200.0">
          <children>
             <TextField fx:id="user" layoutX="26.0" layoutY="14.0" promptText="użytkownik" />
-            <Button fx:id="zaloguj" layoutX="119.0" layoutY="100.0" mnemonicParsing="false" onAction="#zaloguj" text="Zaloguj" />
+            <Button fx:id="zaloguj" layoutX="119.0" layoutY="142.0" mnemonicParsing="false" onAction="#zaloguj" text="Zaloguj" />
             <PasswordField fx:id="password" layoutX="26.0" layoutY="53.0" promptText="hasło" />
          </children>
       </Pane>

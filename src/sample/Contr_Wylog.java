@@ -24,6 +24,8 @@ public class Contr_Wylog implements HierarchicalController<Controller> {
     }
 
     public void wyloguj(ActionEvent actionEvent) {
+        parentController.login.clear();
+        parentController.rola.clear();
         parentController.ToLogowanie(actionEvent);
         parentController.login.clear();
         parentController.rola.clear();
